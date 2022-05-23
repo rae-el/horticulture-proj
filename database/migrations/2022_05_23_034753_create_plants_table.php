@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('plants', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('genus');
-            $table->string('species');
-            $table->string('common');
-
+            $table->string('genus',20);
+            $table->string('species',20);
+            $table->string('common',128);
+            $table->text('description')->nullable();
         });
     }
 
