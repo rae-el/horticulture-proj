@@ -15,9 +15,11 @@ return new class extends Migration
     {
         Schema::create('mothers', function (Blueprint $table) {
             $table->id();
-            $table->smallInteger('plant_id');
+            $table->foreignUuid('plant_id');
             //name & picture comes from plants table link by id
-            $table->smallInteger('location_id');
+            //location id cannot go ahead until table is created
+            //$table->foreignUuid('location_id');
+            $table->set('location_id',[1,2]);
             //link to location table by id
             $table->smallInteger('block_number')->nullable();
             $table->smallInteger('row_number')->nullable();

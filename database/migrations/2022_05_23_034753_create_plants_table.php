@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('plants', function (Blueprint $table) {
             $table->id();
-            $table->integer('image_id')->unsigned();
+            //not sure about this array method
+            $table->integer('image_id')->toArray()->nullable();
             $table->string('scientific_name',128);
             $table->string('common_name',128)->nullable();
             $table->text('description')->nullable();

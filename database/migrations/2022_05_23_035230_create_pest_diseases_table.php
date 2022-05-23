@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('pest_diseases', function (Blueprint $table) {
             $table->id();
-            $table->integer('image_id');
-            $table->string('type',20);
+            //not sure about this array method
+            $table->smallInteger('image_id')->toArray();
+            $table->set('type',['pest','disease']);
             $table->string('name',128);
             $table->text('description')->nullable();
             $table->string('treatment_type',128);
