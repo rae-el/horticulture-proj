@@ -8,4 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class PestDisease extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'type',
+        'name',
+        'description',
+        'treatment_type',
+        'treatment_name',
+        'treatment_dosage',
+    ];
+
+    protected $hidden = [];
+
+    protected $casts = [];
+
+    ///create the other tables before functions about belonging
 }

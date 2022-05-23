@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('name',128);
             $table->text('description')->nullable();
             $table->string('treatment_type',128);
-            $table->string('treatment_name',128);
+            $table->string('treatment_name',128)->nullable();
             $table->string('treatment_dosage',128)->nullable();
         });
     }
