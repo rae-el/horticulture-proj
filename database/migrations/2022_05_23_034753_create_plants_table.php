@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('plants', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-            $table->string('genus',20);
-            $table->string('species',20);
-            $table->string('common',128);
+            $table->integer('image_id');
+            $table->string('scientific_name',128);
+            $table->string('common_name',128)->nullable();
             $table->text('description')->nullable();
+            $table->timestamps();
         });
     }
 

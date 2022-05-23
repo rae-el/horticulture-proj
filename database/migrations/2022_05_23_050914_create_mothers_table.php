@@ -21,10 +21,10 @@ return new class extends Migration
             $table->tinyInteger('location_id');
             //link to location table by id
             //in the location table put the name, site supervisor and if advance stock
-            $table->smallInteger('block_number');
-            $table->smallInteger('row_number');
-            $table->mediumInteger('quantity');
-            $table->date('date_of_stock');
+            $table->smallInteger('block_number')->nullable();
+            $table->smallInteger('row_number')->nullable();
+            $table->mediumInteger('quantity')->nullable();
+            $table->date('date_of_stock')->nullable();
             //should have pruning as a separate table?
             //should have fertilization as a separate table?
             //should have pest/disease treatment as a separate table?

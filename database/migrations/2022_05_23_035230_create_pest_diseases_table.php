@@ -15,13 +15,14 @@ return new class extends Migration
     {
         Schema::create('pest_diseases', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->integer('image_id');
             $table->string('type',20);
             $table->string('name',128);
             $table->text('description')->nullable();
             $table->string('treatment_type',128);
             $table->string('treatment_name',128)->nullable();
             $table->string('treatment_dosage',128)->nullable();
+            $table->timestamps();
         });
     }
 
