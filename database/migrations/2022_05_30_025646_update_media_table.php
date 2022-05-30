@@ -13,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('plants', function (Blueprint $table) {
-            $table->id();
-            //not sure about this array method
-            $table->integer('image_id')->toArray();
-            $table->string('scientific_name',128);
-            $table->string('common_name',128)->nullable();
-            $table->text('description')->nullable();
+        Schema::table('media', function (Blueprint $table)
+        {
+            /*Either a link to an image, a description, the image or the image itself or a combination*/
+            $table->binary('file')->nullable();
+            $table->string('link', 28)->nullable();
+            $table->text('image_description', 180)->nullable();
         });
     }
 
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('plants');
+        //
     }
 };
