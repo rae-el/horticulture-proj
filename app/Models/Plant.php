@@ -20,10 +20,13 @@ class Plant extends Model
 
     protected $casts = [];
 
-    ///create the other tables eg. motherstock
-    /// then create the functions regarding belonging
-    /// eg.
-    /// public function motherstock(){
-    ///     return $this -> belongsToMany(MotherStock::class);
-    /// }
+    public function mother()
+    {
+        return $this->belongsTo(Mother::class);
+    }
+
+    public function media()
+    {
+        return $this->hasMany(Media::class);
+    }
 }

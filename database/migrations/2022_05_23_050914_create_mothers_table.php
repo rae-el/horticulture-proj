@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('mothers', function (Blueprint $table) {
             $table->id();
-            $table->foreignUuid('plant_id');
+            $table->foreignId('plant_id');
             //name & picture comes from plants table link by id
             //location id cannot go ahead until table is created
             //$table->foreignUuid('location_id');
