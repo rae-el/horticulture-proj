@@ -1,7 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers;
+use App\Http\Controllers\MediaController;
+use App\Http\Controllers\MotherController;
+use App\Http\Controllers\PestDiseaseController;
+use App\Http\Controllers\PlantController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +30,7 @@ Route::group(['middleware'=>['auth']],function(){
     Route::resource('plants',PlantController::class);
     Route::resource('pests_diseases',PestDiseaseController::class);
     Route::resource('media',MediaController::class);
+    Route::resource('mothers',MotherController::class);
     Route::get('/dashboard',function(){
         return view('dashboard');
     })->name('dashboard');
