@@ -25,6 +25,13 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        // Sets Sudo USER permission (returns bool)
+        // (after to prevent any none allowed actions, see
+        // https://spatie.be/docs/laravel-permission/v5/basic-usage/super-admin
+        // For details
+
+        Gate::after(function ($user, $ability){
+           return $user->hasRole('Sudo');
+        });
     }
 }
