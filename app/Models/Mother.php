@@ -17,4 +17,14 @@ class Mother extends Model
         'quantity',
         'date_of_stock',
     ];
+
+    protected $hidden = [];
+
+    protected $casts = [];
+
+    public function media()
+    {
+        return $this->hasOne(Plant::class);
+    }
+
 }

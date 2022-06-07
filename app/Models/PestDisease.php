@@ -22,5 +22,10 @@ class PestDisease extends Model
 
     protected $casts = [];
 
+    public function media()
+    {
+        return $this->hasMany(Media::class);
+    }
+
     ///create the other tables before functions about belonging
 }

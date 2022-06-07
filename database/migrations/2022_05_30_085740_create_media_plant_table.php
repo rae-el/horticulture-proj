@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('plants', function (Blueprint $table) {
+        Schema::create('media_plant', function (Blueprint $table) {
             $table->id();
-            //not sure about this array method
-            $table->foreignId('image_id')->toArray();
-            $table->string('scientific_name',128);
-            $table->string('common_name',128)->nullable();
-            $table->text('description')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -30,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('plants');
+        Schema::dropIfExists('media_plant');
     }
 };
