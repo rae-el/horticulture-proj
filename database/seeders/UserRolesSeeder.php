@@ -25,6 +25,12 @@ class UserRolesSeeder extends Seeder
         // Create Sudo Account (permissions in AuthServiceProvider)
         $sudoRole = Role::create(['name' => 'Sudo']);
 
+        // Create Staff Account (permissions in AuthServiceProvider)
+        $staffRole = Role::create(['name'=> 'Staff']);
+
+        // Create Student Account (permissions in AuthServiceProvider)
+        $studentRole = Role::create(['name' => 'Student']);
+
         // Create Guest Account (just read permissions)
         $guestRole = Role::create(['name' => 'guest']);
         $guestRole -> givePermissionTo('view articles');
