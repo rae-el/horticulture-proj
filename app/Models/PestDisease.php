@@ -24,7 +24,12 @@ class PestDisease extends Model
 
     public function media()
     {
-        return $this->hasMany(Media::class);
+        return $this->hasMany(Media::class)
+            ->withPivot([
+                'file',
+                'link',
+                'image_description'
+            ]);
     }
 
     ///create the other tables before functions about belonging

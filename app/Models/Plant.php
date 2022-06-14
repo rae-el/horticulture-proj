@@ -22,11 +22,16 @@ class Plant extends Model
 
     public function mother()
     {
-        return $this->belongsTo(Mother::class);
+        return $this->belongsToMany(Mother::class);
     }
 
     public function media()
     {
-        return $this->hasMany(Media::class);
+        return $this->hasMany(Media::class)
+            ->withPivot([
+                'file',
+                'link',
+                'image_description'
+            ]);
     }
 }
