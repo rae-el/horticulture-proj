@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('media_plant', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('media_id');
+            $table->foreignId('plant_id');
             $table->timestamps();
         });
     }

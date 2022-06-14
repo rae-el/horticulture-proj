@@ -24,7 +24,13 @@ class Mother extends Model
 
     public function media()
     {
-        return $this->hasOne(Plant::class);
+        return $this->hasMany(Plant::class)
+            ->withPivot([
+            'genus',
+            'species',
+            'common',
+            'description',
+        ]);
     }
 
 }

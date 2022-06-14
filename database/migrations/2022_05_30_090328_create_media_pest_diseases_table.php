@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('media_pest_diseases', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('media_id');
+            $table->foreignId('pest_disease_id');
             $table->timestamps();
         });
     }

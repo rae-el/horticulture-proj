@@ -22,12 +22,12 @@ class Media extends Model
 
     public function plant()
     {
-        return $this->belongsTo(Plant::class);
+        return $this->belongsToMany(Plant::class);
     }
 
     public function pestdisease()
     {
-        return $this->belongsTo(PestDisease::class);
+        return $this->belongsToMany(PestDisease::class);
     }
 
 }
